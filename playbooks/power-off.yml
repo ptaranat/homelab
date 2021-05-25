@@ -2,8 +2,7 @@
   gather_facts: no
   tasks:
     - name: Shutdown
-      command: /sbin/shutdown -h now
-      sudo: yes
+      command: sudo /sbin/shutdown -h now
 
     - name: Wait for host
       local_action: wait_for host={{ ansible_ssh_host }} port=22 state=stopped
