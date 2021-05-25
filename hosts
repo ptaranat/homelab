@@ -1,9 +1,9 @@
 [master]
-192.168.99.115
+k0
 
 [nodes]
-192.168.99.116
-192.168.99.117
+k1
+k2
 
 [k3s_cluster:children]
 master
