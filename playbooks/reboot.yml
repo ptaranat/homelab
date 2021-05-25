@@ -1,0 +1,6 @@
+- hosts: master:nodes
+  become: true
+  tasks:
+    - name: Reboot machines
+      reboot:
+        reboot_timeout: 300
