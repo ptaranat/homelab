@@ -42,7 +42,7 @@
     src: /etc/rancher/k3s/k3s.yaml
     dest: /home/{{ ansible_user }}/.kube/config
     remote_src: true
-    mode: 0700
+    mode: 0600
     owner: "{{ ansible_user }}"
 
 - name: Replace https://localhost:6443 by https://master-pi:6443
