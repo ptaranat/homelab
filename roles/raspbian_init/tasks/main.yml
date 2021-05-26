@@ -1,3 +1,4 @@
+---
 - name: Set GPU memory split to 16 MB
   lineinfile:
     path: /boot/config.txt

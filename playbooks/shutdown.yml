@@ -1,3 +1,5 @@
+---
+# yamllint disable rule:line-length
 - hosts: master:nodes
   gather_facts: false
   tasks:

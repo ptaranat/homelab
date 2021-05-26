@@ -1,3 +1,4 @@
+---
 - hosts: master:nodes
   become: true
   tasks:

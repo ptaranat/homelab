@@ -1,3 +1,4 @@
+---
 - name: Initialize Raspberry Pis
   hosts: all
   remote_user: pi

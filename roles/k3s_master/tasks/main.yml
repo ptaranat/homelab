@@ -1,3 +1,5 @@
+---
+# yamllint disable rule:line-length
 - name: Set Master IP Address Fact
   set_fact:
     master_ip: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
