@@ -1,8 +1,9 @@
 - hosts: master:nodes
-  gather_facts: no
+  gather_facts: false
   tasks:
     - name: Shutdown
-      shell: shutdown -h now
+      command: shutdown -h now
+      changed_when: false
       become: true
 
     - name: Save target host IP

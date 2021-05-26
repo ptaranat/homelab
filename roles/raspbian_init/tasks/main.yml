@@ -2,19 +2,20 @@
   lineinfile:
     path: /boot/config.txt
     line: "gpu_mem=16"
-    create: yes
+    mode: 0755
+    create: true
 
 - name: Add cgroup directives to boot commandline config
   lineinfile:
     path: /boot/cmdline.txt
     regexp: '((.)+?)(\scgroup_\w+=\w+)*$'
     line: '\1 cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory'
-    backrefs: yes
+    backrefs: true
 
 - name: Point hostname to localhost (k3s requirement)
   lineinfile:
     path: /etc/hosts
-    line: "127.0.0.1 {{inventory_hostname}}"
+    line: "127.0.0.1 {{ inventory_hostname }}"
 
 - name: Set hostname to inventory hostname
   hostname:

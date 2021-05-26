@@ -1,0 +1,11 @@
+- name: Install Latest k3s
+  shell:
+    cmd: >
+      set -o pipefail &&
+      curl -sfL https://get.k3s.io |
+      INSTALL_K3S_VERSION="v1.21.1+k3s1"
+      K3S_URL=https://{{ hostvars[groups['master'][0]]['ansible_facts']['master_ip'] }}:6443
+      K3S_TOKEN={{ hostvars[groups['master'][0]]['ansible_facts']['node_token'] | quote }} bash -
+  changed_when: false
+  args:
+    executable: /bin/bash
